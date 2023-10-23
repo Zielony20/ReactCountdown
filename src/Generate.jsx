@@ -32,19 +32,19 @@ const Generate = () => {
         <select value={month} onChange={(e) => setMonth(e.target.value)}>
           <option value=''>Select Month</option>
           <option selected value='1'>
-            January
+            Styczeń
           </option>
-          <option value='2'>February</option>
-          <option value='3'>March</option>
-          <option value='4'>April</option>
-          <option value='5'>May</option>
-          <option value='6'>June</option>
-          <option value='7'>July</option>
-          <option value='8'>August</option>
-          <option value='9'>September</option>
-          <option value='10'>October</option>
-          <option value='11'>November</option>
-          <option value='12'>December</option>
+          <option value='2'>Luty</option>
+          <option value='3'>Marzec</option>
+          <option value='4'>Kwiecień</option>
+          <option value='5'>Maj</option>
+          <option value='6'>Czerwiec</option>
+          <option value='7'>Lipiec</option>
+          <option value='8'>Sierpień</option>
+          <option value='9'>Wrzesień</option>
+          <option value='10'>Październik</option>
+          <option value='11'>Listopad</option>
+          <option value='12'>Grudzień</option>
         </select>
       </div>
       <button className='btn' onClick={() => generateLink()}>

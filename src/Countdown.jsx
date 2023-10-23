@@ -11,19 +11,19 @@ const Countdown = ({ countdownData, name }) => {
         <div className='countdown-wrapper'>
           <div className='countdown-box'>
             {countdownData.days}
-            <span className='legend'>Days</span>
+            <span className='legend'>Dni</span>
           </div>
           <div className='countdown-box'>
             {countdownData.hours}
-            <span className='legend'>Hours</span>
+            <span className='legend'>Godziny</span>
           </div>
           <div className='countdown-box'>
             {countdownData.minutes}
-            <span className='legend'>Minutes</span>
+            <span className='legend'>Minuty</span>
           </div>
           <div className='countdown-box'>
             {countdownData.seconds}
-            <span className='legend'>Seconds</span>
+            <span className='legend'>Sekundy</span>
           </div>
         </div>
       </div>
