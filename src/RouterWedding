@@ -1,0 +1,14 @@
+import React from 'react';
+import Wedding from './Wedding';
+
+const RouterWedding = (props) => {
+  const { params } = props.match;
+  const { name, day, month } = params;
+  return (
+    <>
+      <Wedding name={name} month={month} day={day} />
+    </>
+  );
+};
+
+export default RouterWedding;
