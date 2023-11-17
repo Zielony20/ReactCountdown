@@ -45,23 +45,25 @@ function CountdownTimer() {
     <div>
       <h1>Odliczanie do 14 września 2024, 15:00</h1>
       <div className="countdown">
-        <div className="countdown-item">
+        <div>
           <span>{days}</span>
           <p>Dni</p>
         </div>
-        <div className="countdown-item">
+        <div>
           <span>{hours}</span>
           <p>Godzin</p>
         </div>
-        <div className="countdown-item">
+        <div>
           <span>{minutes}</span>
           <p>Minut</p>
         </div>
-        <div className="countdown-item">
+        <div>
           <span>{seconds}</span>
           <p>Sekund</p>
         </div>
       </div>
+    
+
     </div>
   );
 }
@@ -78,8 +80,29 @@ function App() {
         />
         <Route exact path='/generate' component={Generate} />
       </Switch>
+      <div className="countdown-wrapper">    
+<div className="countdown-box">
+  <span>Część dalsza ogłoszeń</span>
+  <p>Dni</p>
+</div>
+<div className="Church">
+<p>Sekund</p>
+</div>
+<div className="Restaurant">
+<p>Sekund</p>
+</div>
+<div className="Map">
+<p>Sekund</p>
+</div>
+<div className="Contact">
+<p>Sekund</p>
+</div>
+</div>
+    
     </div>
+    
   );
 }
 
 export default App;
+

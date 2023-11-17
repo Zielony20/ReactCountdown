@@ -107,7 +107,7 @@ const Wedding = ({ name, day, month }) => {
       {!isItWday && (
         <>
           <div className='birthdate'>
-            Data ślubu: {day} {monthBday} {currentYear}
+            Data ślubu: {day} {monthBday} 2024
           </div>
           
         </>
