@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import './App.css';
-import Wedding from './Wedding';
-import { Route, Switch } from 'react-router-dom';
-import RouterWedding from './RouterWedding';
-import Generate from './Generate';
+import "./App.css";
+import Wedding from "./Wedding";
+import { Route, Switch } from "react-router-dom";
+import RestaurantDetails from "./RestaurantDetails";
+import ChurchDetails from "./ChurchDetails";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+
+import RouterWedding from "./RouterWedding";
+import Generate from "./Generate";
 
 function CountdownTimer() {
-  const targetDate = new Date('2024-09-14T15:00:00').getTime();
+  const targetDate = new Date("2024-09-14T15:00:00").getTime();
   const currentDate = new Date().getTime();
   const timeRemaining = targetDate - currentDate;
 
@@ -22,8 +27,12 @@ function CountdownTimer() {
       const timeRemaining = targetDate - now;
 
       const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const hours = Math.floor(
+        (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+      );
       const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
       setDays(days);
@@ -62,45 +71,35 @@ function CountdownTimer() {
           <p>Sekund</p>
         </div>
       </div>
-    
-
     </div>
   );
 }
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Switch>
-        <Route exact path='/' component={Wedding} />
+        <Route exact path="/" component={Wedding} />
         <Route
           exact
-          path='/Wedding/:name?/:day?/:month?'
+          path="/Wedding/:name?/:day?/:month?"
           component={RouterWedding}
         />
-        <Route exact path='/generate' component={Generate} />
+        <Route exact path="/generate" component={Generate} />
       </Switch>
-      <div className="countdown-wrapper">    
-<div className="countdown-box">
-  <span>Część dalsza ogłoszeń</span>
-  <p>Dni</p>
-</div>
-<div className="Church">
-<p>Sekund</p>
-</div>
-<div className="Restaurant">
-<p>Sekund</p>
-</div>
-<div className="Map">
-<p>Sekund</p>
-</div>
-<div className="Contact">
-<p>Sekund</p>
-</div>
-</div>
-    
+      <ChurchDetails />
+      <RestaurantDetails />
+      <div className="countdown-wrapper">
+        <div>
+          <span>Dalsza część ogłoszeń</span>
+          <p>xyz</p>
+        </div>
+      </div>
+
+      
+
+
     </div>
-    
   );
 }
 
